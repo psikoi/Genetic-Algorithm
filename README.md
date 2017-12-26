@@ -1,5 +1,9 @@
 # Genetic Evolution Algorithm
-My take on the algorithmic version of Darwinian evolution.
+This project is an attempt at simulating the Darwining genetic evolution on various programmable examples.
 
-This project was an attempt at simulating the Darwining genetic evolution on various programmable examples.
-# Test
+# Components
+  examples  - Implementation/usage examples (currently only includes string search).
+  genetic   - The genetic components and interfaces to be implemented and used.
+  
+# Genetic Components
+  Gene
