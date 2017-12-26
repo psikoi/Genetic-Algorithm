@@ -6,7 +6,7 @@ This project is an attempt at simulating the Darwining genetic evolution on vari
   genetic   - The genetic components and interfaces to be implemented and used.
   
 ### Genetic Components
-Gene        - Single element that contains DNA information. (Ex: In string search, a gene could be a character)
-Chromosome  - Collection of genes, this object can also store its fitness score.
-GeneticPair - Pair of chromosomes, created from selecting two parent chromosomes.
+Gene        - Single element that contains DNA information. (Ex: In string search, a gene could be a character)<br>
+Chromosome  - Collection of genes, this object can also store its fitness score.<br>
+GeneticPair - Pair of chromosomes, created from selecting two parent chromosomes.<br>
 Population  - Collection of chromosomes, this object evolves until the fittest chromosome reaches the maximum fitness.
