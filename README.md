@@ -24,4 +24,21 @@ This is calculated by implementing the interface "FitnessEvaluator" located unde
 
 ### Factories
 
-The factories are used to create new/random chromosomes and genes, implement your own using the interfaces to match whatever gene and chromosome 
+The factories provided are used to create new/random chromosomes and genes, implement your own using the interfaces to match whatever gene and chromosome your implementation requires.
+
+### Strategies
+The strategies provided are the population's behaviour, implement your own to match your project's requirements.<br>
+
+  <b>Selection</b> - Selects two parent chromosomes, based on their fitness.<br>
+  <b>Crossover</b> - Generates a child, based on the parent's genes.<br>
+  <b>Mutation</b> - Mutates the chiild, depending on the mutation rate and the gene's type.<br>
+  <b>Evolution</b> - The evolution's behaviour, refer back to <b>Evolution Types</b> earlier in this file.<br>
+  
+  
+  ##String search example
+  The provided example is a string search implementation using a genetic algorithm, when given a target string, it will
+  generate chromosomes and evolve the population until one chromosome matches the target (100% fitness).
+  
+  For more information on creating genetic algorithms, visit: http://www.springer.com/cda/content/document/cda_downloaddocument/9780387221960-c1.pdf?SGWID=0-0-45-166514-p46178519
+  
+
