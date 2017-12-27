@@ -9,16 +9,16 @@ public class StringChromosomeFactory implements ChromosomeFactory {
 
         private int geneCount;
         private GeneFactory geneFactory;
+        private Random random;
 
         public StringChromosomeFactory(int geneCount, GeneFactory geneFactory) {
             this.geneCount = geneCount;
             this.geneFactory = geneFactory;
+            this.random = new Random();
         }
 
         @Override
         public Chromosome generateRandom() {
-
-            Random random = new Random();
 
             StringChromosome c = new StringChromosome();
             
