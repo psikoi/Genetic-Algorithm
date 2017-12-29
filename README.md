@@ -15,7 +15,7 @@ This project is an attempt at simulating the Darwining genetic evolution on vari
 ### Evolution Types
 * ***SingleParentEvolution*** - A chromosome will create and mutate a copy of itself (child), if the child's fitness is greater than the parent's fitness, the child will replace the parent.<br>
 
-* ***DoubleParentEvolution*** - Two chromosomes will be selected from the population (the greater the fitness, the greater the chance of being selected to reproduce). The selected chromosomes will reproduce using crossover (selecting genes from both parents, mixing them to form it's own set of genes). Finally, the child will be mutated to provide a level of randomness to the population ***(this prevents the population reaching a local maximum)***. This process is repeated enough times to completely replace a population with it's own children.
+* ***DoubleParentEvolution*** - Two chromosomes will be selected from the population (the greater the fitness, the greater the chance of being selected to reproduce). The selected chromosomes will reproduce using crossover (selecting genes from both parents, mixing them to form it's own set of genes). Finally, the child will be mutated to provide a level of randomness to the population <b>(this prevents the population reaching a local maximum)</b>. This process is repeated enough times to completely replace a population with it's own children.
 
 ### Fitness
 
