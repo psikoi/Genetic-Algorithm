@@ -31,7 +31,7 @@ The strategies provided are the population's behaviour, implement your own to ma
 
 *  ***Selection*** - Selects two parent chromosomes, based on their fitness.<br>
 *  ***Crossover*** - Generates a child, based on the parent's genes.<br>
-*  ***Mutation*** - Mutates the chiild, depending on the mutation rate and the gene's type.<br>
+*  ***Mutation*** - Mutates the child, depending on the mutation rate and the gene's type.<br>
 *  ***Evolution*** - The evolution's behaviour, refer back to <b>Evolution Types</b> earlier in this file.<br>
   
   
