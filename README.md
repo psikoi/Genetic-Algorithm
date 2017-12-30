@@ -71,7 +71,7 @@ The strategies provided are the population's behaviour, implement your own to ma
   * ***OPTIMAL*** - This strength is an improved mutation strategy, combining almost all of the previous mutation strengths, to get the best results in the short and long term.
   
   ***How optimal mutation works***<br>
-  After running each mutation strength multiple times in various timed sessions, I gathered that the Hard mutation works great for short-term results, but fails to evolve correctly in the long term. Opposite to hard mutation, soft mutation worked the best for long sessions but took a while to get to a high fitness. To take advantage of both results, I created the optimal mutation, that starts out hard, after ***5 seconds*** switches to medium, after ***60 seconds*** switches to soft, and stays at soft for the rest of the session.
+  After running each mutation strength multiple times in various timed sessions, I gathered that the Hard mutation works great for short-term results, but fails to evolve correctly in the long term. Unlike hard mutation, soft mutation worked the best for long sessions but took a while to get to a high fitness. To take advantage of both results, I created the optimal mutation, that starts out hard, after ***5 seconds*** switches to medium, after ***60 seconds*** switches to soft, and stays at soft for the rest of the session.
 However, the optimal mutation also decreases the soft delta (initially -25 to 25) by 1 every 3 minutes, and attempts to add a completely random gene every 10 seconds (to introduce some more radical mutations, to hopefully prevent local maximum).
 
 This is the data I collected, that helped me make those decisions:<br>
