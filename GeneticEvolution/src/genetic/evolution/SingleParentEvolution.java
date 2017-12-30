@@ -9,32 +9,22 @@ public class SingleParentEvolution implements EvolutionStrategy {
     @Override
     public boolean evolve(Population population) {
 
-        boolean evolved = false;
+        Population newPopulation = population.copy();
 
-        Population newPopulation = new Population(population.getTarget(), population.getMaxPopulation());
-        newPopulation.setEvaluator(population.getEvaluator());
+        for (Chromosome c : newPopulation) {
+            newPopulation.getMutationStrategy().mutate(c);
+        }
 
-        
-        Chromosome c = new Chromosome();
-        c.addAll(population.getFittest());
-        c.setFitness(population.getFittest().getFitness());
-
-        population.getMutationStrategy().mutate(c);
-        newPopulation.add(c);
-
-        
         newPopulation.evaluate();
-        
 
-        if (c.getFitness() > population.getFittest().getFitness()) {
+        if (newPopulation.getTotalFitness() > population.getTotalFitness()) {
             population.clear();
             population.addAll(newPopulation);
-            population.evaluate();
-            evolved = true;
+            population.increaseBeneficialGenerations();
+            return true;
         }
         
-
-        return evolved;
+        return true;
 
     }
 

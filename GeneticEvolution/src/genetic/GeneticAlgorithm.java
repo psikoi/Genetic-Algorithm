@@ -12,6 +12,7 @@ import java.util.Observable;
 
 public class GeneticAlgorithm extends Observable {
 
+    
     private Population population;
 
     private GeneFactory geneFactory;
@@ -25,7 +26,7 @@ public class GeneticAlgorithm extends Observable {
     private EvolutionStrategy evolutionStrategy;
 
     public void start(Chromosome target, int maxPopulationSize, float mutationRate) {
-
+        
         population = new Population(target, maxPopulationSize);
         population.setChromosomeFactory(chromosomeFactory);
         population.setGeneFactory(geneFactory);
@@ -42,10 +43,10 @@ public class GeneticAlgorithm extends Observable {
             if (population.evolve()) {
                 updateObservers();
             }
-
         }
 
     }
+
 
     private void updateObservers() {
         setChanged();
