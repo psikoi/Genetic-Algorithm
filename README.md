@@ -80,7 +80,7 @@ This is the data I collected, that helped me make those decisions:<br>
 ![](https://github.com/psikoi/Genetic-Evolution-Algorithm/blob/master/results/5%20min%20graph.png)
 
 <br><br>
-### Results (1h session)
+### Results (1h session, 50 genes (polygons) )
 
 ![](https://github.com/psikoi/Genetic-Evolution-Algorithm/blob/master/results/images/2826.png)
 ![](https://github.com/psikoi/Genetic-Evolution-Algorithm/blob/master/results/images/4386.png)
