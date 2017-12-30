@@ -32,5 +32,10 @@ public class CharGene implements Gene {
         
     }
 
+    @Override
+    public Gene copy() {
+        return new CharGene(data);
+    }
+
 
 }

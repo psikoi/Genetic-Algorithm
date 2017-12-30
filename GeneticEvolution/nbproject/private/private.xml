@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ruben/Desktop/GeneticEvolution/src/geneticevolution/Launcher.java</file>
+            <file>file:/C:/Users/Ruben/Desktop/GeneticEvolution/src/examples/example_monalisa/ui/StatsPanel.java</file>
+            <file>file:/C:/Users/Ruben/Desktop/GeneticEvolution/src/genetic/evolution/SingleParentEvolution.java</file>
+            <file>file:/C:/Users/Ruben/Desktop/GeneticEvolution/src/examples/example_monalisa/ui/LisaExampleFrame.java</file>
+            <file>file:/C:/Users/Ruben/Desktop/GeneticEvolution/src/examples/Launcher.java</file>
         </group>
     </open-files>
 </project-private>
