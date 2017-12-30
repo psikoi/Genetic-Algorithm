@@ -31,7 +31,7 @@ public class StringLauncher {
 
     public static void main(String[] args) {
 
-        Chromosome target = convert("ruben amendoeira did this");
+        Chromosome target = convert("I was coded by Ruben Amendoeira");
 
         initUI();
 
