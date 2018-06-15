@@ -1,6 +1,6 @@
 # Genetic Evolution Algorithm
 ***Author: Ruben Amendoeira***<br>
-This project is an attempt at simulating the Darwining genetic evolution on various programmable examples.
+This project is an attempt at simulating the Darwinian genetic evolution on various programmable examples.
 
 
 
