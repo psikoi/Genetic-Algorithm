@@ -34,10 +34,6 @@ public class StringChromosome extends Chromosome{
         StringChromosome c = (StringChromosome) o;
         
         return c.toString().equals(toString());
-        
     }
-
-    
-    
     
 }

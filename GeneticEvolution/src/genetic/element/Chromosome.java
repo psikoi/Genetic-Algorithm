@@ -25,12 +25,15 @@ public class Chromosome extends ArrayList<Gene> {
     }
 
     public Chromosome copy() {
+        
         Chromosome c = new Chromosome();
         c.setFitness(fitness);
+        
         for (Gene g : this) {
             c.add(g.copy());
         }
+        
         return c;
     }
-
+    
 }

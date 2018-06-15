@@ -12,9 +12,9 @@ import java.awt.image.BufferedImage;
 
 public class LisaFitnessEvaluator implements FitnessEvaluator {
 
-    private Chromosome target;
+    private final Chromosome target;
     private BufferedImage current;
-    private BufferedImage realTarget;
+    private final BufferedImage realTarget;
 
     public LisaFitnessEvaluator(Chromosome target, BufferedImage realTarget) {
         this.target = target;
@@ -26,6 +26,7 @@ public class LisaFitnessEvaluator implements FitnessEvaluator {
     public float score(Chromosome c) {
 
         this.current = new BufferedImage(realTarget.getWidth(), realTarget.getHeight(), BufferedImage.TYPE_INT_ARGB);
+
         Graphics g = this.current.createGraphics();
         drawIntoImage((Graphics2D) g, c);
 
@@ -39,9 +40,7 @@ public class LisaFitnessEvaluator implements FitnessEvaluator {
                 fitness += Math.abs(c1.getRed() - c2.getRed());
                 fitness += Math.abs(c1.getGreen() - c2.getGreen());
                 fitness += Math.abs(c1.getBlue() - c2.getBlue());
-
             }
-
         }
 
         return 1 - (fitness / getMaximumScore());
@@ -60,6 +59,7 @@ public class LisaFitnessEvaluator implements FitnessEvaluator {
             g.setColor(l.getColor());
             g.fillPolygon(l.getPolygon());
         }
+
     }
 
     @Override

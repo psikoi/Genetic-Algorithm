@@ -1,19 +1,11 @@
 package examples.example_string;
 
-import examples.example_monalisa.*;
-import examples.example_monalisa.LisaChromosomeFactory;
-import examples.example_monalisa.LisaFitnessEvaluator;
-import examples.example_monalisa.LisaGeneFactory;
-import examples.example_monalisa.LisaMutationStrategy;
-import examples.example_monalisa.LisaMutationStrategy.MutationStrength;
-import examples.example_monalisa.ui.*;
 import examples.example_string.ui.StringExampleFrame;
 import examples.example_string.ui.StringExamplePanel;
 import genetic.GeneticAlgorithm;
 import genetic.element.Chromosome;
 import genetic.element.Gene;
 import genetic.evolution.DoubleParentEvolution;
-import genetic.evolution.SingleParentEvolution;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -60,18 +52,20 @@ public class StringLauncher {
     }
 
     private static Chromosome convert(String s) {
+        
         char[] a = s.toCharArray();
         ArrayList<Gene> genes = new ArrayList<>();
+        
         for (char c : a) {
             genes.add(new CharGene(c));
         }
+        
         return new StringChromosome(0, genes);
     }
 
     public static void initUI() {
         StringExampleFrame frame = new StringExampleFrame();
-        panel = new StringExamplePanel();
-        frame.setContentPane(panel);
+        frame.setContentPane(panel = new StringExamplePanel());
         frame.setVisible(true);
     }
 

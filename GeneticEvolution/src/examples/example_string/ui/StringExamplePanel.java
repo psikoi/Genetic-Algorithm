@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class StringExamplePanel extends JPanel implements Observer {
 
     private Population population;
-    private Font bold;
+    private final Font bold;
 
     private int generationCount;
 
@@ -53,7 +53,6 @@ public class StringExamplePanel extends JPanel implements Observer {
         g.drawString("Population size:", 20, 275);
         g.drawString("Mutation rate:", 20, 325);
 
-
     }
 
     @Override
@@ -73,7 +72,6 @@ public class StringExamplePanel extends JPanel implements Observer {
 
             repaint();
         }
-
     }
 
 }

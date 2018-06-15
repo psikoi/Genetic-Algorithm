@@ -23,9 +23,8 @@ public class SingleParentEvolution implements EvolutionStrategy {
             population.increaseBeneficialGenerations();
             return true;
         }
-        
-        return true;
 
+        return true;
     }
 
 }

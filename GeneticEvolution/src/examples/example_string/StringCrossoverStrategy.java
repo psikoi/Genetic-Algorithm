@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class StringCrossoverStrategy implements CrossoverStrategy {
 
-    private Random random;
+    private final Random random;
 
     public StringCrossoverStrategy() {
         this.random = new Random();
@@ -28,7 +28,6 @@ public class StringCrossoverStrategy implements CrossoverStrategy {
         }
 
         return c;
-
     }
 
 }

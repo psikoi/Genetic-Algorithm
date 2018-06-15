@@ -19,7 +19,6 @@ public class CharGene implements Gene {
         return data + "";
     }
     
-    
     @Override
     public boolean equals(Object o) {
         
@@ -29,13 +28,11 @@ public class CharGene implements Gene {
         CharGene c = (CharGene) o;
         
         return c.getData() == getData();
-        
     }
 
     @Override
     public Gene copy() {
         return new CharGene(data);
     }
-
 
 }

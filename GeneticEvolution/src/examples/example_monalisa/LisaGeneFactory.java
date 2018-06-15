@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class LisaGeneFactory implements GeneFactory {
 
-    private int screenSize;
-    private Random random;
+    private final int screenSize;
+    private final Random random;
 
     public LisaGeneFactory(int screenSize) {
         this.screenSize = screenSize;
@@ -37,7 +37,6 @@ public class LisaGeneFactory implements GeneFactory {
         }
 
         return new LisaGene(poly, rndColor);
-
     }
 
 }

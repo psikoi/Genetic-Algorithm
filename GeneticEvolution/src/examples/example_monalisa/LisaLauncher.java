@@ -1,9 +1,5 @@
 package examples.example_monalisa;
 
-import examples.example_monalisa.LisaChromosomeFactory;
-import examples.example_monalisa.LisaFitnessEvaluator;
-import examples.example_monalisa.LisaGeneFactory;
-import examples.example_monalisa.LisaMutationStrategy;
 import examples.example_monalisa.LisaMutationStrategy.MutationStrength;
 import examples.example_monalisa.ui.*;
 import genetic.GeneticAlgorithm;
@@ -20,6 +16,7 @@ public class LisaLauncher {
     private static final int MAX_POPULATION = 1;
     private static final float MUTATION_RATE = 1f;
     private static final int GENE_COUNT = 50;
+    
     private static final MutationStrength MUTATION_STRENGTH = MutationStrength.OPTIMAL;
 
     private static LisaExampleFrame frame;

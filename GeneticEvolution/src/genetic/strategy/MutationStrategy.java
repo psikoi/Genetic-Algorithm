@@ -4,7 +4,7 @@ import genetic.element.Chromosome;
 
 public abstract class MutationStrategy {
 
-    private float mutationRate;
+    private final float mutationRate;
 
     public MutationStrategy(float mutationRate) {
         this.mutationRate = mutationRate;

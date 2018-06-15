@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class StringSelectionStrategy implements SelectionStrategy {
 
-    private float maxFitness;
-    private Random random;
+    private final float maxFitness;
+    private final Random random;
 
     public StringSelectionStrategy(float maxFitness) {
         this.random = new Random();
@@ -29,11 +29,14 @@ public class StringSelectionStrategy implements SelectionStrategy {
         }
 
         if (totalFitness == 0) {
+            
             int randomIndexA = random.nextInt(population.size());
             int randomIndexB = random.nextInt(population.size());
+            
             while (randomIndexB == randomIndexA) {
                 randomIndexB = random.nextInt(population.size());
             }
+            
             return new GeneticPair(population.get(randomIndexA), population.get(randomIndexB));
         }
 
@@ -45,7 +48,6 @@ public class StringSelectionStrategy implements SelectionStrategy {
                 }
 
                 float chance = (c.getFitness() / maxFitness) / 10;
-
                 float rnd = random.nextFloat();
 
                 if (rnd < chance) {

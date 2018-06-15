@@ -16,13 +16,14 @@ public class LisaChromosome extends Chromosome {
 
     @Override
     public String toString() {
+        
         String str = "";
+        
         for(Gene g : this){
             str += g.toString();
         }
+        
         return str;
     }
-    
-    
     
 }

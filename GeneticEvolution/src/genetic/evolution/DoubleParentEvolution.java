@@ -25,11 +25,9 @@ public class DoubleParentEvolution implements EvolutionStrategy {
 
         population.clear();
         population.addAll(newPopulation);
-
         population.evaluate();
         
         return true;
-
     }
 
 }

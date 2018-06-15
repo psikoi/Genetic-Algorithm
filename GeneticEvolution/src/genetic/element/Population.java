@@ -15,7 +15,7 @@ public class Population extends ArrayList<Chromosome> {
     private int generation;
     private int beneficialGenerations;
 
-    private Chromosome target;
+    private final Chromosome target;
 
     private GeneFactory geneFactory;
     private ChromosomeFactory chromosomeFactory;
@@ -30,8 +30,7 @@ public class Population extends ArrayList<Chromosome> {
     public Population(Chromosome target, int maxPopulation) {
         super();
         this.maxPopulation = maxPopulation;
-        this.generation = 0;
-        this.beneficialGenerations = 0;
+        this.generation = this.beneficialGenerations = 0;
         this.target = target;
     }
 
@@ -39,9 +38,11 @@ public class Population extends ArrayList<Chromosome> {
         generation++;
         return evolutionStrategy.evolve(this);
     }
-    
-    public Population copy(){
+
+    public Population copy() {
+
         Population newPopulation = new Population(target, maxPopulation);
+
         newPopulation.setGeneration(generation);
         newPopulation.setBeneficialGenerations(beneficialGenerations);
         newPopulation.setGeneFactory(geneFactory);
@@ -51,9 +52,11 @@ public class Population extends ArrayList<Chromosome> {
         newPopulation.setCrossoverStrategy(crossoverStrategy);
         newPopulation.setMutationStrategy(mutationStrategy);
         newPopulation.setEvolutionStrategy(evolutionStrategy);
-        for(Chromosome c : this){
+
+        for (Chromosome c : this) {
             newPopulation.add(c.copy());
         }
+
         return newPopulation;
     }
 
@@ -65,22 +68,24 @@ public class Population extends ArrayList<Chromosome> {
     public float getTotalFitness() {
 
         float fitness = 0;
+
         for (Chromosome c : this) {
             fitness += c.getFitness();
         }
+
         return fitness;
     }
 
     public float totalFitness() {
 
-        if (evaluator == null) {
-            return 0;
+        float fitness = 0;
+
+        if (evaluator != null) {
+            for (Chromosome c : this) {
+                fitness += evaluator.score(c);
+            }
         }
 
-        float fitness = 0;
-        for (Chromosome c : this) {
-            fitness += evaluator.score(c);
-        }
         return fitness;
     }
 
@@ -125,10 +130,10 @@ public class Population extends ArrayList<Chromosome> {
 
     public Chromosome getFittest() {
 
-        
-        if(size() == 1)
+        if (size() == 1) {
             return get(0);
-        
+        }
+
         Chromosome best = null;
 
         for (Chromosome c : this) {
@@ -154,8 +159,8 @@ public class Population extends ArrayList<Chromosome> {
         return worst;
 
     }
-    
-    public void increaseBeneficialGenerations(){
+
+    public void increaseBeneficialGenerations() {
         this.beneficialGenerations++;
     }
 
@@ -230,7 +235,5 @@ public class Population extends ArrayList<Chromosome> {
     public void setBeneficialGenerations(int beneficialGenerations) {
         this.beneficialGenerations = beneficialGenerations;
     }
-    
-    
 
 }

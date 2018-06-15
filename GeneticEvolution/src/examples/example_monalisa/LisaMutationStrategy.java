@@ -9,15 +9,15 @@ import java.util.Random;
 
 public class LisaMutationStrategy extends MutationStrategy {
 
-    private Random random;
-    private int screenSize;
+    private final Random random;
+    private final int screenSize;
 
-    private GeneFactory geneFactory;
+    private final GeneFactory geneFactory;
 
-    private MutationStrength selectedStrength;
+    private final MutationStrength selectedStrength;
     private MutationStrength currentStrength;
 
-    private long start;
+    private final long start;
     private long lastRandomAddition;
 
     public LisaMutationStrategy(MutationStrength selectedStrength, int screenSize, GeneFactory geneFactory) {
@@ -40,7 +40,6 @@ public class LisaMutationStrategy extends MutationStrategy {
         a.add(randIndex, mutated(a, toMutate));
 
         return a;
-
     }
 
     private Gene mutated(Chromosome a, Gene gene) {
@@ -89,7 +88,6 @@ public class LisaMutationStrategy extends MutationStrategy {
                 mutateSoft(g);
                 break;
         }
-
         
         if(System.currentTimeMillis() > (lastRandomAddition + 10000)){
             lastRandomAddition = System.currentTimeMillis();
@@ -122,7 +120,6 @@ public class LisaMutationStrategy extends MutationStrategy {
                 double delta = (int) random.nextGaussian() * alpha * 0.2;
                 g.setColor(new Color(red, green, blue, limit(alpha + delta, 255, 0)));
             }
-
         } else {
             int pointIndex = random.nextInt(g.getPolygon().npoints);
 
@@ -133,15 +130,15 @@ public class LisaMutationStrategy extends MutationStrategy {
                 double delta = (int) random.nextGaussian() * g.getPolygon().ypoints[pointIndex] * 0.2;
                 g.getPolygon().ypoints[pointIndex] = limit(g.getPolygon().ypoints[pointIndex] + delta, screenSize, 0);
             }
-
         }
+        
     }
 
     private void mutateHard(LisaGene g) {
 
-        g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-
         int pointIndex = random.nextInt(g.getPolygon().npoints);
+        
+        g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255), random.nextInt(255)));
         g.getPolygon().xpoints[pointIndex] = random.nextInt(200);
         g.getPolygon().ypoints[pointIndex] = random.nextInt(200);
 
@@ -167,8 +164,9 @@ public class LisaMutationStrategy extends MutationStrategy {
             } else {
                 g.setColor(new Color(red, green, blue, random.nextInt(255)));
             }
-
+            
         } else {
+            
             int pointIndex = random.nextInt(g.getPolygon().npoints);
 
             if (actionChance < 1.5) {
@@ -176,9 +174,8 @@ public class LisaMutationStrategy extends MutationStrategy {
             } else {
                 g.getPolygon().ypoints[pointIndex] = random.nextInt(screenSize);
             }
-
+            
         }
-
     }
 
     private void mutateSoft(LisaGene g) {
@@ -204,6 +201,7 @@ public class LisaMutationStrategy extends MutationStrategy {
             }
 
         } else {
+            
             int pointIndex = random.nextInt(g.getPolygon().npoints);
 
             if (actionChance < 1.5) {
@@ -213,7 +211,6 @@ public class LisaMutationStrategy extends MutationStrategy {
             }
 
         }
-
     }
 
     private int limit(int num, int max, int min) {
@@ -227,7 +224,6 @@ public class LisaMutationStrategy extends MutationStrategy {
         }
 
         return num;
-
     }
 
     private int limit(double num, int max, int min) {
@@ -241,7 +237,6 @@ public class LisaMutationStrategy extends MutationStrategy {
         }
 
         return (int) num;
-
     }
 
     public MutationStrength getStrength() {

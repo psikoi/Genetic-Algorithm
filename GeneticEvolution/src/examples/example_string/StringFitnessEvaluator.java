@@ -5,7 +5,7 @@ import genetic.FitnessEvaluator;
 
 public class StringFitnessEvaluator implements FitnessEvaluator {
 
-    private Chromosome target;
+    private final Chromosome target;
 
     public StringFitnessEvaluator(Chromosome target) {
         this.target = target;
@@ -25,11 +25,11 @@ public class StringFitnessEvaluator implements FitnessEvaluator {
         }
 
         return (float) Math.pow(score, 3);
-
     }
 
     @Override
     public float getMaximumScore() {
         return (float) Math.pow(target.size(), 3);
     }
+
 }

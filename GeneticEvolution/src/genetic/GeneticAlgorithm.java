@@ -12,7 +12,6 @@ import java.util.Observable;
 
 public class GeneticAlgorithm extends Observable {
 
-    
     private Population population;
 
     private GeneFactory geneFactory;
@@ -39,14 +38,12 @@ public class GeneticAlgorithm extends Observable {
         population.seed();
 
         while (!population.hasEvolved()) {
-
             if (population.evolve()) {
                 updateObservers();
             }
         }
 
     }
-
 
     private void updateObservers() {
         setChanged();
