@@ -64,7 +64,7 @@ The strategies provided are the population's behaviour, implement your own to ma
   
   ### Mutation Strategy (Mona Lisa)
   The mutation strategy for the mona lisa example selects one random gene and mutates it depending on a variable named ***mutation strength***, this variable can have 5 values:
-  * ***HARD*** - This strength will change the gene's R,G,B,A values by random (0-255) and will also select a random point from it's polygon, and change it's x and y position to a random (0-sceenSize).<br>
+  * ***HARD*** - This strength will change the gene's R,G,B,A values by random (0-255) and will also select a random point from it's polygon, and change it's x and y position to a random (0-screenSize).<br>
   * ***MEDIUM*** - This strength will change ***ONE*** of the gene's variables, it has a 50% percent chance to change one of the color values, by a random (0-255) and a 50% chance of changing on of the x,y values by a random (0-screenSize).<br>
   * ***SOFT*** - This strength is the same as the above MEDIUM, except it adds/subtracts the value by a small delta, instead of randomly. This small delta can be between -25 and 25.<br>
   * ***GAUSSIAN*** - This strength is the same as the above SOFT, and was an attempt of using the gaussian bell curve to calculate better delta values, this unfortunately proved to be worse than soft mutation, but was worth the try.<br>
